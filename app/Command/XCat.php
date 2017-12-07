@@ -117,8 +117,8 @@ class XCat
 
     public function createAdmin()
     {
-//        $this->initQQWry();
-//        $this->initdownload();
+        $this->initQQWry();
+        $this->initdownload();
         echo "add admin/ 创建管理员帐号.....";
         // ask for input
         fwrite(STDOUT, "Enter your email/输入管理员邮箱: ");
