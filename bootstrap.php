@@ -1,29 +1,16 @@
 <?php
+// Vendor Autoload
+//  BASE_PATH
+define('BASE_PATH', __DIR__);
+define('VERSION', '20170829');
 
-/***
- * ss-panel v3 Bootstrap
- * @author orvice
- * @email sspanel@orx.me
- * @url https://github.com/orvice/ss-panel
- */
+require BASE_PATH . '/vendor/autoload.php';
+require BASE_PATH . "/config/.config.php";
 
 use App\Services\Boot;
 
 Boot::loadEnv();
 Boot::setDebug();
-
-//  BASE_PATH
-define('BASE_PATH', __DIR__);
-define('VERSION', '20170829');
-
-// Vendor Autoload
-require BASE_PATH.'/vendor/autoload.php';
-
-require BASE_PATH."/config/.config.php";
-
-
-//Boot::setVersion(VERSION);
-// config time zone
+Boot::setVersion(VERSION);
 Boot::setTimezone();
-// Init db
 Boot::bootDb();
